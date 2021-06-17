@@ -1,0 +1,27 @@
+name: update-readme-docker
+
+on:
+  push:
+    branches:
+    - 'main'
+    - 'master'
+    paths:
+      - '**/README.md'
+  pull_request:
+    branches:
+    - 'main'
+    - 'master'
+  workflow_dispatch:
+#if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
+jobs:
+  image:
+    name: update-readme-docker
+    runs-on: ubuntu-latest
+    steps:
+    - name: Docker Hub Description
+      uses: peter-evans/dockerhub-description@v2
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASS }}
+        repository: bensuperpc/tensorflow
+        readme-filepath: ./README.md
