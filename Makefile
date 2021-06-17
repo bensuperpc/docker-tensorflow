@@ -39,7 +39,7 @@ $(VERSION_LIST): $(DOCKERFILE)
 
 all: $(VERSION_LIST)
 
-push: $(VERSION_LIST)
+push:
 	$(DOCKER) push $(IMAGE_NAME) --all-tags
 
 clean:
