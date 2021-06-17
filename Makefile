@@ -35,7 +35,7 @@ VERSION_LIST := latest latest-devel latest-jupyter devel latest-gpu latest-devel
 $(VERSION_LIST): $(DOCKERFILE)
 	$(DOCKER) build . -f $(DOCKERFILE) -t $(IMAGE_NAME):$@ \
 	--build-arg BUILD_DATE=$(DATE_FULL) --build-arg DOCKER_IMAGE=$(BASE_IMAGE):$@ \
-	--build-arg VERSION=$(VERSION) --build-arg BUILD_DATE=$(DATE_FULL)
+	--build-arg VERSION=$(VERSION)
 
 all: $(VERSION_LIST)
 
