@@ -22,8 +22,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [latest, latest-devel, latest-jupyter, devel, latest-gpu, latest-devel-gpu, latest-gpu-jupyter, devel-gpu, \
-          2.5.0, 2.5.0-jupyter, 2.5.0-gpu, 2.5.0-gpu-jupyter, 1.15.5, 1.15.5-jupyter, 1.15.5-gpu, 1.15.5-gpu-jupyter]
+        version: ["latest", "latest-devel", "latest-jupyter", "devel", "latest-gpu", "latest-devel-gpu", "latest-gpu-jupyter", "devel-gpu", \
+          "2.5.0", "2.5.0-jupyter", "2.5.0-gpu", "2.5.0-gpu-jupyter", "1.15.5", "1.15.5-jupyter", "1.15.5-gpu", "1.15.5-gpu-jupyter"]
     steps:
       - name: "📥 Checkout Code"
         uses: actions/checkout@v2.3.4
