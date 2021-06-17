@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 6
       matrix:
         version: [latest, latest-devel, latest-jupyter, devel, latest-gpu, latest-devel-gpu, latest-gpu-jupyter, devel-gpu, 
           2.5.0, 2.5.0-jupyter, 2.5.0-gpu, 2.5.0-gpu-jupyter, 1.15.5, 1.15.5-jupyter, 1.15.5-gpu, 1.15.5-gpu-jupyter]

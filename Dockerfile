@@ -2,7 +2,8 @@ ARG DOCKER_IMAGE=tensorflow/tensorflow:latest
 FROM $DOCKER_IMAGE
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get dist-upgrade -y \
+RUN apt-get update \
+#	&& apt-get dist-upgrade -y \
 	&& apt-get install -y wget libsm6 libxext6 libxrender-dev libgl1-mesa-glx \
 	&& update-alternatives --install /usr/bin/python python /usr/bin/python3 999 \
 	&& apt-get clean autoclean \
@@ -10,7 +11,9 @@ RUN apt-get update && apt-get dist-upgrade -y \
 	&& rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 ADD requirements.txt requirements.txt
-RUN python -m pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt && rm requirements.txt
+
+#RUN python -m pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt && rm requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 RUN python -c "import sklearn; print(sklearn.__version__)" && echo sklearn OK || echo sklearn FAILD
 RUN python -c "import tensorflow; print(tensorflow.__version__)" && echo tensorflow OK || echo tensorflow FAILD

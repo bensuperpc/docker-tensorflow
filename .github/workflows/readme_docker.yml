@@ -24,4 +24,4 @@ jobs:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
         repository: bensuperpc/tensorflow
-        readme-filepath: ./README.md
+        readme-filepath: README.md
