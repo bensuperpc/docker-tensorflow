@@ -1,2 +1,2 @@
 # docker-tensorflow
-tensorflow in docker
+tensorflow in docker with openCV, numpy, scikit-learn ect...
