@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 0
       - name: "🛠️ Build"
         run: make ${{ matrix.version }}
-      - name: "🛠️ Build and 📤 Upload to hub.docker.com"
+      - name: "📤 Upload to hub.docker.com"
         run: |
             docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }} || echo hub.docker.com: login faild
             make push
