@@ -6,7 +6,8 @@ on:
     - 'main'
     - 'master'
     paths:
-      - '**/README.md'
+      - 'README.md'
+      - '.github/workflows/dockerhub-description.yml'
   pull_request:
     branches:
     - 'main'
@@ -24,4 +25,4 @@ jobs:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
         repository: bensuperpc/tensorflow
-        readme-filepath: README.md
+        short-description: ${{ github.event.repository.description }}

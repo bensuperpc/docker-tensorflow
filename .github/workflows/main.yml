@@ -8,6 +8,7 @@ on:
     - 'dev'
     paths-ignore:
     - '**/README.md'
+    - '.github/workflows/dockerhub-description.yml'
   pull_request:
     branches:
     - '*'
