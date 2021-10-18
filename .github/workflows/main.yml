@@ -28,7 +28,7 @@ jobs:
           2.5.0, 2.5.0-jupyter, 2.5.0-gpu, 2.5.0-gpu-jupyter, 1.15.5, 1.15.5-jupyter, 1.15.5-gpu, 1.15.5-gpu-jupyter]
     steps:
       - name: "📥 Checkout Code"
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.5
         with:
           submodules: 'recursive'
           fetch-depth: 0
